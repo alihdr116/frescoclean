@@ -9,7 +9,32 @@
 <body>
 
 <!-- NAV -->
-<header class="navbar"> <div class="logo-box"> <img src="images/logo.png" alt="FrescoClean Logo"> <span>FrescoClean</span> </div> <nav> <a href="index.html">Home</a> <a href="services.html">Services</a> <a href="about.html">About</a> <a href="contact.html">Contact</a> </nav> <a href="contact.html" class="nav-btn">Get Quote</a> </header>
+<header class="navbar">
+
+  <!-- LEFT: LOGO -->
+  <div class="logo-box">
+    <img src="images/logo.png" alt="logo">
+  </div>
+
+  <!-- CENTER: NAME -->
+  <div class="nav-title">FrescoClean</div>
+
+  <!-- RIGHT: MENU ICON -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <!-- DROPDOWN MENU -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="mobile-btn">Get Quote</a>
+  </nav>
+
+  <!-- DESKTOP BUTTON (UNCHANGED) -->
+  <a href="contact.html" class="nav-btn">Get Quote</a>
+
+</header>
 
 <!-- HERO -->
 <section class="hero hero-img">
