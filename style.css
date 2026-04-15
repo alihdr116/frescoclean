@@ -199,12 +199,6 @@ body{
   background:linear-gradient(90deg,#0077cc,#00bfff);
 }
 
-.info-card h2{
-  font-size:22px;
-  margin-bottom:10px;
-  color:#0d2b45;
-}
-
 /* ================= ABOUT ================= */
 .about-section{
   padding:90px 120px;
@@ -217,7 +211,6 @@ body{
   gap:30px;
 }
 
-/* ✅ FIXED HERE (IMPORTANT) */
 .about-card{
   background:#fff;
   border-radius:18px;
@@ -225,8 +218,7 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
   border:1px solid #e6f0ff;
   position:relative;
-  width:100%;          /* FIX */
-  max-width:none;      /* FIX - removes shrinking issue */
+  width:100%;
 }
 
 .about-card::before{
@@ -275,68 +267,7 @@ footer{
   font-weight:600;
 }
 
-/* ================= TABLET ================= */
-@media(max-width:1024px){
-  .section{
-    padding:60px 40px;
-  }
-
-  .info-section,
-  .about-grid{
-    grid-template-columns:repeat(2,1fr);
-    padding:60px 40px;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-
-  .navbar{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-    padding:15px;
-  }
-
-  .navbar nav{
-    flex-wrap:wrap;
-    gap:10px;
-  }
-
-  .section{
-    padding:40px 15px;
-  }
-
-  .info-section,
-  .about-grid{
-    grid-template-columns:1fr;
-    padding:40px 15px;
-  }
-
-  .hero h1{
-    font-size:24px;
-  }
-
-  .section img{
-    height:220px;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ================= SMALL MOBILE ================= */
-@media(max-width:420px){
-  .hero h1{
-    font-size:20px;
-  }
-}
-/* ================= MOBILE NAV ONLY ================= */
+/* ================= MOBILE NAVBAR ONLY FIX ================= */
 .menu-toggle{
   display:none;
   font-size:28px;
@@ -346,14 +277,16 @@ footer{
   color:#0077cc;
 }
 
-/* MOBILE ONLY */
 @media(max-width:768px){
+
+  .navbar{
+    padding:15px;
+  }
 
   .menu-toggle{
     display:block;
   }
 
-  /* hide normal nav links */
   .navbar nav{
     display:none;
     position:absolute;
@@ -362,11 +295,10 @@ footer{
     width:100%;
     background:#fff;
     flex-direction:column;
-    gap:0;
     box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    z-index:1000;
   }
 
-  /* show when active */
   .navbar nav.active{
     display:flex;
   }
@@ -376,14 +308,13 @@ footer{
     border-bottom:1px solid #eee;
   }
 
-  /* keep Get Quote visible */
   .nav-btn{
-    position:absolute;
-    right:60px;
+    margin-left:auto;
+    margin-right:10px;
   }
 
   .navbar{
     position:relative;
-    align-items:center;
+    flex-wrap:wrap;
   }
 }
