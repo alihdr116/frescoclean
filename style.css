@@ -333,3 +333,32 @@ footer{
     font-size:20px;
   }
 }
+/* ================= FIX ABOUT US MOBILE ALIGNMENT ================= */
+
+@media(max-width:768px){
+
+  .about-section h2{
+    text-align:center;
+  }
+
+  .about-card{
+    text-align:left;
+  }
+
+  .about-card p{
+    text-align:justify;
+  }
+}
+
+@media(max-width:420px){
+
+  .about-card{
+    margin:0 auto;
+    width:100%;
+  }
+
+  .about-card p{
+    font-size:14px;
+    line-height:1.7;
+  }
+}
