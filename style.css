@@ -224,6 +224,7 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
   border:1px solid #e6f0ff;
   position:relative;
+  width:95%;
 }
 
 .about-card::before{
