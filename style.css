@@ -99,7 +99,7 @@ body{
 
 /* HERO IMAGE */
 .hero-img{
-  background:url("images/hero.jpg") center/cover no-repeat;
+  background:url("images/hero.avif") center/cover no-repeat;
   color:#fff;
   position:relative;
 }
