@@ -336,3 +336,54 @@ footer{
     font-size:20px;
   }
 }
+/* ================= MOBILE NAV ONLY ================= */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:#0077cc;
+}
+
+/* MOBILE ONLY */
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  /* hide normal nav links */
+  .navbar nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#fff;
+    flex-direction:column;
+    gap:0;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  /* show when active */
+  .navbar nav.active{
+    display:flex;
+  }
+
+  .navbar nav a{
+    padding:15px;
+    border-bottom:1px solid #eee;
+  }
+
+  /* keep Get Quote visible */
+  .nav-btn{
+    position:absolute;
+    right:60px;
+  }
+
+  .navbar{
+    position:relative;
+    align-items:center;
+  }
+}
