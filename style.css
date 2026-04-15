@@ -308,10 +308,23 @@ footer{
     padding:40px 15px;
   }
 
-  .info-section,
-  .about-grid{
+  .info-section{
     grid-template-columns:1fr;
     padding:40px 15px;
+  }
+
+  /* ✅ FIXED ABOUT SECTION */
+  .about-section{
+    padding:40px 15px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+
+  .about-card{
+    width:100%;
   }
 
   .hero h1{
@@ -325,23 +338,11 @@ footer{
   .form-grid{
     grid-template-columns:1fr;
   }
-
-  /* ✅ FIX: ABOUT CARDS WIDTH ON MOBILE */
-  .about-card{
-    width:95%;
-    max-width:700px;
-    margin:0 auto;
-  }
 }
 
 /* ================= SMALL MOBILE ================= */
 @media(max-width:420px){
   .hero h1{
     font-size:20px;
-  }
-
-  .about-card{
-    width:98%;
-    max-width:100%;
   }
 }
