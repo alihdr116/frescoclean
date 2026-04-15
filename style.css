@@ -24,8 +24,6 @@ body{
   top:0;
   z-index:999;
   box-shadow:0 5px 20px rgba(0,0,0,0.05);
-  flex-wrap:wrap;
-  gap:10px;
 }
 
 .logo-box{
@@ -56,6 +54,10 @@ body{
   text-decoration:none;
   color:#222;
   font-weight:600;
+}
+
+.navbar nav a:hover{
+  color:#0077cc;
 }
 
 .nav-btn{
@@ -109,7 +111,7 @@ body{
   color:#0d2b45;
 }
 
-/* GRID */
+/* ================= GRID ================= */
 .grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -148,46 +150,6 @@ body{
   text-decoration:none;
 }
 
-/* ================= INFO SECTION ================= */
-.info-section{
-  padding:90px 120px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-  background:linear-gradient(180deg,#f4f9ff,#ffffff);
-}
-
-.info-card{
-  background:#fff;
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  border:1px solid #e6f0ff;
-  position:relative;
-}
-
-.info-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  height:5px;
-  width:100%;
-  background:linear-gradient(90deg,#0077cc,#00bfff);
-}
-
-.info-card h2{
-  font-size:24px;
-  margin-bottom:14px;
-  color:#0d2b45;
-}
-
-.info-card p{
-  font-size:15.5px;
-  line-height:1.8;
-  color:#444;
-}
-
 /* ================= ABOUT SECTION ================= */
 .about-section{
   padding:90px 120px;
@@ -214,32 +176,20 @@ body{
   border:1px solid #e6f0ff;
 }
 
-/* ================= CONTACT ================= */
-.contact-form-box{
-  max-width:800px;
-  margin:auto;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.contact-form-box input,
-.contact-form-box select,
-.contact-form-box textarea{
+/* ================= IMAGE FIX (IMPORTANT) ================= */
+.section img{
   width:100%;
-  padding:14px;
-  margin-top:12px;
-  border:1px solid #e0e0e0;
-  border-radius:10px;
+  display:block;
+  object-fit:cover;
+  border-radius:20px;
 }
 
+/* ================= FOOTER ================= */
 footer{
   text-align:center;
   padding:20px;
   background:#d9ecff;
+  font-weight:600;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -258,11 +208,6 @@ footer{
   .about-grid{
     grid-template-columns:repeat(2,1fr);
   }
-
-  .info-section{
-    padding:70px 40px;
-    grid-template-columns:repeat(2,1fr);
-  }
 }
 
 /* MOBILE */
@@ -272,10 +217,11 @@ footer{
     flex-direction:column;
     align-items:flex-start;
     padding:15px;
+    gap:10px;
   }
 
   .hero h1{
-    font-size:24px;
+    font-size:26px;
   }
 
   .section{
@@ -283,8 +229,7 @@ footer{
   }
 
   .grid,
-  .about-grid,
-  .info-section{
+  .about-grid{
     grid-template-columns:1fr;
   }
 
@@ -296,8 +241,10 @@ footer{
     padding:50px 15px;
   }
 
-  .info-section{
-    padding:50px 15px;
+  /* IMAGE FIX FOR MOBILE */
+  .section img{
+    height:220px;
+    border-radius:14px;
   }
 }
 
@@ -308,8 +255,7 @@ footer{
     font-size:20px;
   }
 
-  .about-card,
-  .info-card{
+  .about-card{
     padding:18px;
   }
 }
