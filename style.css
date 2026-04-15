@@ -24,6 +24,8 @@ body{
   top:0;
   z-index:999;
   box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  flex-wrap:wrap;
+  gap:10px;
 }
 
 .logo-box{
@@ -32,7 +34,10 @@ body{
   gap:10px;
 }
 
-.logo-box img{ height:45px; width:auto; }
+.logo-box img{
+  height:45px;
+  width:auto;
+}
 
 .logo-box span{
   font-size:22px;
@@ -44,16 +49,13 @@ body{
   display:flex;
   gap:25px;
   align-items:center;
+  flex-wrap:wrap;
 }
 
 .navbar nav a{
   text-decoration:none;
   color:#222;
   font-weight:600;
-}
-
-.navbar nav a:hover{
-  color:#0077cc;
 }
 
 .nav-btn{
@@ -74,13 +76,6 @@ body{
 .hero h1{
   font-size:48px;
   font-weight:800;
-}
-
-.hero p{
-  font-size:18px;
-  max-width:800px;
-  margin:20px auto;
-  color:#444;
 }
 
 .hero-img{
@@ -114,12 +109,14 @@ body{
   color:#0d2b45;
 }
 
+/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:25px;
 }
 
+/* CARD */
 .card{
   background:#fff;
   border-radius:16px;
@@ -142,11 +139,20 @@ body{
   background:linear-gradient(135deg,#d9ecff,#f4f9ff);
 }
 
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#0077cc;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+}
+
 /* ================= INFO SECTION ================= */
 .info-section{
   padding:90px 120px;
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:30px;
   background:linear-gradient(180deg,#f4f9ff,#ffffff);
 }
@@ -158,12 +164,6 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
   border:1px solid #e6f0ff;
   position:relative;
-  overflow:hidden;
-  transition:0.3s;
-}
-
-.info-card:hover{
-  transform:translateY(-10px);
 }
 
 .info-card::before{
@@ -198,12 +198,11 @@ body{
   text-align:center;
   font-size:32px;
   margin-bottom:40px;
-  color:#0d2b45;
 }
 
 .about-grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:30px;
 }
 
@@ -213,32 +212,9 @@ body{
   padding:30px;
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
   border:1px solid #e6f0ff;
-  position:relative;
-  overflow:hidden;
-  transition:0.3s;
 }
 
-.about-card:hover{
-  transform:translateY(-10px);
-}
-
-.about-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:5px;
-  background:linear-gradient(90deg,#0077cc,#00bfff);
-}
-
-.about-card p{
-  font-size:15.5px;
-  line-height:1.8;
-  color:#444;
-}
-
-/* ================= CONTACT FORM ================= */
+/* ================= CONTACT ================= */
 .contact-form-box{
   max-width:800px;
   margin:auto;
@@ -260,20 +236,10 @@ body{
   border-radius:10px;
 }
 
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:#0077cc;
-  color:#fff;
-  border-radius:10px;
-}
-
-/* ================= FOOTER ================= */
 footer{
   text-align:center;
   padding:20px;
   background:#d9ecff;
-  font-weight:600;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -285,17 +251,17 @@ footer{
     padding:60px 40px;
   }
 
-  .info-section{
-    padding:70px 40px;
-    grid-template-columns:repeat(2, 1fr);
-  }
-
-  .about-section{
-    padding:70px 40px;
+  .grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
   .about-grid{
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .info-section{
+    padding:70px 40px;
+    grid-template-columns:repeat(2,1fr);
   }
 }
 
@@ -303,37 +269,35 @@ footer{
 @media(max-width:768px){
 
   .navbar{
-    flex-wrap:wrap;
-    padding:12px 15px;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:15px;
   }
 
   .hero h1{
-    font-size:28px;
+    font-size:24px;
   }
 
   .section{
     padding:40px 15px;
   }
 
-  .grid{
+  .grid,
+  .about-grid,
+  .info-section{
     grid-template-columns:1fr;
   }
 
-  .info-section{
-    padding:50px 18px;
-    grid-template-columns:1fr;
+  .card img{
+    height:200px;
   }
 
   .about-section{
-    padding:50px 18px;
+    padding:50px 15px;
   }
 
-  .about-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
+  .info-section{
+    padding:50px 15px;
   }
 }
 
@@ -341,21 +305,11 @@ footer{
 @media(max-width:420px){
 
   .hero h1{
-    font-size:24px;
+    font-size:20px;
   }
 
-  .info-card,
-  .about-card{
+  .about-card,
+  .info-card{
     padding:18px;
-  }
-
-  .info-card h2,
-  .about-card h2{
-    font-size:18px;
-  }
-
-  .info-card p,
-  .about-card p{
-    font-size:14px;
   }
 }
