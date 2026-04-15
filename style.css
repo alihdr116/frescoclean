@@ -1,38 +1,30 @@
-/* ================= GLOBAL ================= */
+
+/* ================= RESET ================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body{
-  background:#f6f9fc;
-  color:#1b1b1b;
+  background:#f4f9ff;
+  color:#1a1a1a;
   line-height:1.6;
-  padding-top:75px;
   overflow-x:hidden;
 }
 
-/* ================= GLASS NAVBAR ================= */
+/* ================= NAVBAR ================= */
 .navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:70px;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
-  padding:0 60px;
-
-  background:rgba(255,255,255,0.75);
-  backdrop-filter:blur(12px);
-
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  padding:18px 60px;
+  background:linear-gradient(90deg,#d9ecff,#eef6ff);
+  position:sticky;
+  top:0;
   z-index:999;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 /* LOGO */
@@ -43,217 +35,234 @@ body{
 }
 
 .logo-box img{
-  height:42px;
+  height:45px;
+  width:auto;
 }
 
 .logo-box span{
-  font-size:20px;
+  font-size:22px;
   font-weight:800;
-  color:#0a66c2;
+  color:#0077cc;
 }
 
 /* NAV LINKS */
 .navbar nav{
   display:flex;
-  gap:28px;
+  gap:25px;
+  align-items:center;
 }
 
 .navbar nav a{
   text-decoration:none;
-  color:#333;
-  font-weight:500;
-  font-size:15px;
-  position:relative;
-  transition:0.3s;
-}
-
-.navbar nav a::after{
-  content:"";
-  position:absolute;
-  bottom:-5px;
-  left:0;
-  width:0%;
-  height:2px;
-  background:#0a66c2;
+  color:#222;
+  font-weight:600;
   transition:0.3s;
 }
 
 .navbar nav a:hover{
-  color:#0a66c2;
+  color:#0077cc;
 }
 
-.navbar nav a:hover::after{
-  width:100%;
+/* CTA BUTTON */
+.nav-btn{
+  padding:10px 18px;
+  background:#0077cc;
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.nav-btn:hover{
+  background:#005fa3;
 }
 
 /* ================= HERO ================= */
 .hero{
-  min-height:92vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  min-height:auto;
+  padding:80px 20px;
   text-align:center;
-  padding:0 20px;
 }
 
 .hero h1{
-  font-size:56px;
+  font-size:48px;
   font-weight:800;
-  letter-spacing:-1px;
-  max-width:1000px;
 }
 
 .hero p{
   font-size:18px;
-  max-width:700px;
+  max-width:800px;
   margin:20px auto;
-  color:#555;
+  color:#444;
 }
 
-/* ================= BUTTON ================= */
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:#0a66c2;
-  color:white;
-  border-radius:12px;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
-  box-shadow:0 10px 25px rgba(10,102,194,0.2);
+/* HERO IMAGE */
+.hero-img{
+  background:url("images/hero.jpg") center/cover no-repeat;
+  color:#fff;
+  position:relative;
 }
 
-.btn:hover{
-  transform:translateY(-3px);
-  background:#084b8a;
+.hero-img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.hero-img h1,
+.hero-img p{
+  position:relative;
+  z-index:2;
 }
 
 /* ================= SECTIONS ================= */
 .section{
-  padding:90px 120px;
+  padding:80px 100px;
 }
 
 .section h2{
-  font-size:36px;
+  font-size:32px;
   text-align:center;
-  margin-bottom:50px;
-  color:#0f172a;
+  margin-bottom:40px;
+  color:#0d2b45;
 }
 
-/* ================= GRID ================= */
+/* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
-/* ================= CARD (MODERN GLASS STYLE) ================= */
+/* CARD */
 .card{
   background:#fff;
-  border-radius:18px;
-  padding:24px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.06);
-  border:1px solid #eef2f7;
-  transition:0.3s ease;
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.06);
+  border:1px solid #e6f0ff;
+  transition:0.3s;
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(0,0,0,0.1);
+  transform:translateY(-6px);
 }
 
 .card img{
   width:100%;
-  height:170px;
+  height:180px;
   object-fit:cover;
-  border-radius:14px;
-  margin-bottom:12px;
+  border-radius:12px;
+  margin-bottom:10px;
 }
 
-/* ================= BLOCKS ================= */
-.long{
-  padding:90px 120px;
-}
-
-.block{
-  background:#fff;
-  padding:28px;
-  margin-bottom:25px;
-  border-left:5px solid #0a66c2;
-  border-radius:14px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.05);
-}
-
-/* ================= IMAGE ================= */
+/* IMAGE SECTION */
 .section img{
   width:100%;
-  height:420px;
+  height:400px;
   object-fit:cover;
-  border-radius:18px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  border-radius:20px;
 }
 
-/* ================= CTA ================= */
+/* CTA */
 .cta{
   text-align:center;
-  padding:100px 20px;
-  background:linear-gradient(135deg,#e8f2ff,#f6f9fc);
+  padding:80px 20px;
+  background:linear-gradient(135deg,#d9ecff,#f4f9ff);
 }
 
 .cta h2{
-  font-size:34px;
+  font-size:32px;
 }
 
-/* ================= FOOTER ================= */
+.cta p{
+  max-width:700px;
+  margin:auto;
+}
+
+/* FOOTER */
 footer{
   text-align:center;
-  padding:25px;
-  background:#e8f2ff;
+  padding:20px;
+  background:#d9ecff;
   font-weight:600;
 }
 
-/* ================= TABLET ================= */
-@media(max-width:1024px){
-  .section, .long{
-    padding:70px 40px;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .navbar{
-    padding:0 30px;
-  }
+/* ================= CONTACT FORM ================= */
+.contact-form-box{
+  max-width:800px;
+  margin:auto;
 }
 
-/* ================= MOBILE (IPHONE FIX + PRO LOOK) ================= */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.contact-form-box input,
+.contact-form-box select,
+.contact-form-box textarea{
+  width:100%;
+  padding:14px;
+  margin-top:12px;
+  border:1px solid #e0e0e0;
+  border-radius:10px;
+  font-size:14px;
+  outline:none;
+  transition:0.3s;
+}
+
+.contact-form-box input:focus,
+.contact-form-box select:focus,
+.contact-form-box textarea:focus{
+  border-color:#0077cc;
+  box-shadow:0 0 0 3px rgba(0,119,204,0.1);
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#0077cc;
+  color:#fff;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#005fa3;
+}
+
+/* ================= MOBILE FIX ================= */
 @media(max-width:768px){
 
   .navbar{
-    flex-direction:column;
-    height:auto;
-    padding:15px;
+    flex-wrap:wrap;
+    padding:12px 15px;
     gap:10px;
   }
 
   .navbar nav{
     flex-wrap:wrap;
     justify-content:center;
-    gap:12px;
+    gap:10px;
   }
 
   .hero h1{
-    font-size:30px;
+    font-size:28px;
   }
 
   .hero p{
     font-size:15px;
   }
 
-  .section, .long{
-    padding:50px 18px;
+  .section{
+    padding:40px 15px;
   }
 
   .grid{
@@ -261,23 +270,26 @@ footer{
   }
 
   .section img{
-    height:240px;
+    height:220px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cta h2{
+    font-size:24px;
   }
 }
 
-/* ================= SMALL PHONES ================= */
+/* SMALL PHONES */
 @media(max-width:420px){
 
   .hero h1{
     font-size:24px;
   }
 
-  .btn{
-    padding:10px 18px;
-    font-size:14px;
-  }
-
   .navbar nav a{
-    font-size:13px;
+    font-size:12px;
   }
 }
