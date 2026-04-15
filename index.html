@@ -10,13 +10,13 @@
 
 <!-- NAV -->
 <header class="navbar">
-  
+
   <div class="logo-box">
     <img src="images/logo.avif" alt="FrescoClean Logo">
     <span>FrescoClean</span>
   </div>
 
-  <nav>
+  <nav id="navMenu">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="about.html">About</a>
@@ -24,6 +24,9 @@
   </nav>
 
   <a href="contact.html" class="nav-btn">Get Quote</a>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
 </header>
 
 <!-- HERO -->
@@ -188,4 +191,9 @@
 </footer>
 
 </body>
+  <script>
+function toggleMenu(){
+  document.querySelector(".navbar nav").classList.toggle("active");
+}
+</script>
 </html>
