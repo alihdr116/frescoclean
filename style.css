@@ -362,3 +362,26 @@ footer{
     line-height:1.7;
   }
 }
+/* ================= FIX: ABOUT US MOBILE ALIGNMENT (OUR STORY) ================= */
+@media(max-width:768px){
+
+  .about-section{
+    padding:40px 15px !important;
+  }
+
+  .about-grid{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+  }
+
+  .about-card{
+    width:100%;
+    max-width:500px;
+  }
+
+  .about-card p{
+    text-align:left;
+  }
+}
