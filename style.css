@@ -217,6 +217,7 @@ body{
   gap:30px;
 }
 
+/* ✅ FIXED HERE (IMPORTANT) */
 .about-card{
   background:#fff;
   border-radius:18px;
@@ -224,7 +225,8 @@ body{
   box-shadow:0 12px 30px rgba(0,0,0,0.08);
   border:1px solid #e6f0ff;
   position:relative;
-  width:95%;
+  width:100%;          /* FIX */
+  max-width:none;      /* FIX - removes shrinking issue */
 }
 
 .about-card::before{
@@ -309,23 +311,10 @@ footer{
     padding:40px 15px;
   }
 
-  .info-section{
-    grid-template-columns:1fr;
-    padding:40px 15px;
-  }
-
-  /* ✅ FIXED ABOUT SECTION */
-  .about-section{
-    padding:40px 15px;
-  }
-
+  .info-section,
   .about-grid{
     grid-template-columns:1fr;
-    gap:16px;
-  }
-
-  .about-card{
-    width:100%;
+    padding:40px 15px;
   }
 
   .hero h1{
