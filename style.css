@@ -288,8 +288,73 @@ footer{
   .hero h1{
     font-size:24px;
   }
+  /* ================= INFO SECTION (NEW PROFESSIONAL STYLE) ================= */
+.info-section{
+  padding:80px 100px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:25px;
+  background:#f4f9ff;
+}
+
+/* CARD STYLE */
+.info-card{
+  background:linear-gradient(135deg,#ffffff,#f7fbff);
+  border:1px solid #e6f0ff;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  transition:0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* hover effect */
+.info-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* small accent bar */
+.info-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:#0077cc;
+}
+
+/* heading */
+.info-card h2{
+  font-size:22px;
+  margin-bottom:12px;
+  color:#0d2b45;
+}
+
+/* paragraph */
+.info-card p{
+  font-size:15px;
+  line-height:1.7;
+  color:#444;
+}
 
   .navbar nav a{
     font-size:12px;
+  }
+}
+@media(max-width:768px){
+  .info-section{
+    padding:40px 15px;
+    grid-template-columns:1fr;
+  }
+
+  .info-card{
+    padding:18px;
+  }
+
+  .info-card h2{
+    font-size:18px;
   }
 }
