@@ -72,7 +72,18 @@
 }
 
 /* HIDE MOBILE ELEMENTS ON DESKTOP */
-.menu-toggle,
-.nav-title{
-  display:none;
+@media (min-width: 769px){
+  .menu-toggle,
+  .nav-title{
+    display:none;
+  }
+}
+@media (max-width: 768px){
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-title{
+    display:block;
+  }
 }
